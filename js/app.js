@@ -37,6 +37,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
         playSound(ctx, beats[i], time);
       }
     }
+
+    for (var i in beats) {
+      prev_col = (column + (columns -1)) % columns;
+    
+      var el_in_prev_col = document.querySelectorAll(".beat[data-column='"+prev_col+"']");
+      var el_in_col = document.querySelectorAll(".beat[data-column='"+column+"']");
+      el_in_col.item(i).classList.toggle("highlight");
+      el_in_prev_col.item(i).classList.toggle("highlight");
+    }
     column = (column + 1) % columns;
   }, beat * 1000);
 });
