@@ -1,4 +1,10 @@
 var paused = false;
+var music_map = [
+  [1, 0, 0, 0],
+  [1, 0, 0, 0],
+  [1, 0, 0, 0],
+  [1, 0, 0, 0],
+]
 
 document.addEventListener("DOMContentLoaded", function(event) { 
   var ctx = new (window.AudioContext || window.webkitAudioContext || window.mozAudioContext)(); 
@@ -9,9 +15,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var beat = (60 / tempo) / columns;
   var beat_urls = [
     "music/clicks.mp3",
-    // "music/hat.mp3",
-    // "music/kick.mp3",
-    // "music/snare.mp3",
+    "music/hat.mp3",
+    "music/kick.mp3",
+    "music/snare.mp3",
   ];
   var beats = [];
 
@@ -26,8 +32,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   var intervalID = window.setInterval(function() {
     var time = startTime * 8 * eighthNoteTime;
-    if (column >= 0) {
-      for (var i = 0; i < columns; i++) {
+    for (var i = 0; i < columns; i++) {
+      if (music_map[i][column]) {
         playSound(ctx, beats[i], time);
       }
     }
@@ -92,7 +98,7 @@ BufferLoader.prototype.load = function() {
   this.loadBuffer(this.urlList[i], i);
 }
 
-function toggle() {
+function toggle_music() {
   paused = !paused;
 
   var el = document.getElementById("pause");
@@ -102,4 +108,11 @@ function toggle() {
   } else {
     el.textContent = "Pause";
   }
+}
+
+function toggle_beat(el) {
+  var row = el.dataset.row;
+  var column = el.dataset.column;
+
+  music_map[row][column] ^= 1;
 }
