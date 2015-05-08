@@ -1,3 +1,5 @@
+var paused = false;
+
 document.addEventListener("DOMContentLoaded", function(event) { 
   var ctx = new (window.AudioContext || window.webkitAudioContext || window.mozAudioContext)(); 
   var columns = 4;
@@ -7,9 +9,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var beat = (60 / tempo) / columns;
   var beat_urls = [
     "music/clicks.mp3",
-    "music/hat.mp3",
-    "music/kick.mp3",
-    "music/snare.mp3",
+    // "music/hat.mp3",
+    // "music/kick.mp3",
+    // "music/snare.mp3",
   ];
   var beats = [];
 
@@ -24,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   var intervalID = window.setInterval(function() {
     var time = startTime * 8 * eighthNoteTime;
-    if (column == 0) {
+    if (column >= 0) {
       for (var i = 0; i < columns; i++) {
         playSound(ctx, beats[i], time);
       }
@@ -34,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 function playSound(context, buffer, time) {
-  if (buffer) {
+  if (buffer && !paused) {
     var source = context.createBufferSource();
     source.buffer = buffer;
     source.connect(context.destination);
@@ -88,4 +90,16 @@ BufferLoader.prototype.loadBuffer = function(url, index) {
 BufferLoader.prototype.load = function() {
   for (var i = 0; i < this.urlList.length; ++i)
   this.loadBuffer(this.urlList[i], i);
+}
+
+function toggle() {
+  paused = !paused;
+
+  var el = document.getElementById("pause");
+
+  if (paused) {
+    el.textContent = "Play";
+  } else {
+    el.textContent = "Pause";
+  }
 }
