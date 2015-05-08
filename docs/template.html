@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= name %></title>
+  <meta title="description" content="<%= description %>">
+  <meta title="author" content="<%= author %>">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="css/gray.css">
+  <style>
+    body { color: #222 }
+    a { color: #08c }
+    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: #222 }
+    .container { max-width: 48rem; margin: 0 auto }
+    .border { border: 1px solid #ccc }
+    .rounded { border-radius: 3px }
+    pre { padding: 1rem }
+    pre, .bg-darken-1 { background-color: rgba(0,0,0,.03125) }
+    .bg-white { background-color: white }
+    
+    .sm-show { display: none }
+    @media (min-width:40em) { .sm-show { display: block } }
+  </style>
+</head>
+<body class="px3 container">
+
+  <header class="py2">
+    <h1><%= name %></h1>
+    <p><%= description %></p>
+  </header>
+
+  <section id="intro" class="py3">
+    <p class="h3">
+      Basic scaffolding and utilities for starting any web project. No grid, no colors, no buttons, just the basics.
+    </p>
+  </section>
+
+  <section id="stats" class="py3">
+    <ul class="list-reset">
+      <li><b><%= gzip %></b></li>
+      <li><b><%= stats.rules.length %></b> Rules</li>
+      <li><b><%= stats.aggregates.selectors %></b> Selectors</li>
+      <li><b><%= stats.aggregates.declarations %></b> Declarations</li>
+    </ul>
+  </section>
+
+  <ul class="p1 list-reset bg-white">
+    <% modules.forEach(function(m) { %>
+      <li>
+        <a href="<%= '#' + pfx(m.name) %>">
+          <b>
+            <%= pfx(m.name) %>
+          </b>
+        </a>
+      </li>
+    <% }) %>
+  </ul>
+
+  <% modules.forEach(function(m) { %>
+    <section id="<%= pfx(m.name) %>" class="py3">
+      <h1>
+        <a href="<%= '#' + pfx(m.name) %>">
+          <%= pfx(m.name) %>
+        </a>
+      </h1>
+      <%= m.content %>
+    </section>
+  <% }) %>
+
+
+
+  <%/* footer(obj) */ %>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+{
+  "name": "gray",
+  "version": "1.0.0",
+  "description": "Colorless Basscss utility scaffolding",
+  "author": "Brent Jackson",
+  "license": "MIT",
+  "dependencies": {
+    "basscss-background-images": "latest",
+    "basscss-base-buttons": "latest",
+    "basscss-base-forms": "latest",
+    "basscss-base-reset": "latest",
+    "basscss-base-tables": "latest",
+    "basscss-base-typography": "latest",
+    "basscss-borders": "latest",
+    "basscss-button-outline": "latest",
+    "basscss-button-sizes": "latest",
+    "basscss-button-transparent": "latest",
+    "basscss-color-base": "latest",
+    "basscss-color-forms": "latest",
+    "basscss-color-forms-dark": "latest",
+    "basscss-color-tables": "latest",
+    "basscss-colors": "latest",
+    "basscss-defaults": "latest",
+    "basscss-grid": "latest",
+    "basscss-input-range": "latest",
+    "basscss-media-object": "latest",
+    "basscss-positions": "latest",
+    "basscss-progress": "^1.0.5",
+    "basscss-responsive-states": "latest",
+    "basscss-responsive-white-space": "latest",
+    "basscss-table-object": "latest",
+    "basscss-ui-utility-groups": "latest",
+    "basscss-utility-headings": "latest",
+    "basscss-utility-layout": "latest",
+    "basscss-utility-typography": "latest",
+    "basscss-white-space": "latest",
+    "flex-object": "latest",
+    "normalize.css": "^3.0.3"
+  },
+  "devDependencies": {
+    "cssnext": "^1.1.0",
+    "cssstats": "^1.5.1",
+    "doctor-mark": "^1.1.0",
+    "filesize": "^3.1.2",
+    "get-module-info": "^1.1.1",
+    "http-server": "^0.8.0",
+    "lodash": "^3.6.0",
+    "marked": "^0.3.3",
+    "marked-example": "^1.0.4",
+    "page-footer": "git://github.com/basscss/page-footer",
+    "watch": "^0.14.0"
+  },
+  "scripts": {
+    "css": "cssnext src/gray.css css/gray.css",
+    "minify:css": "cssnext src/gray.css css/gray.min.css -c",
+    "watch:css": "watch 'npm run css && npm run minify:css' ./src",
+    "html": "node docs/build",
+    "watch:html": "watch 'npm run html' ./docs",
+    "serve": "http-server",
+    "start": "npm run watch:css & npm run watch:html & npm run serve"
+  },
+  "doctor_mark": {
+    "template": "docs/template.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/basscss/gray.git"
+  },
+  "keywords": [
+    "css",
+    "oocss",
+    "basscss",
+    "cssnext",
+    "theme"
+  ],
+  "bugs": {
+    "url": "https://github.com/basscss/gray/issues"
+  },
+  "homepage": "https://github.com/basscss/gray",
+  "main": "index.js"
+}

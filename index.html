@@ -1,16 +1,519 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link rel="stylesheet" href="http://d2v52k3cl9vedd.cloudfront.net/monobass/1.0.2/monobass.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <title>Gene by icco</title>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <title>gray</title>
+  <meta title="description" content="Colorless Basscss utility scaffolding">
+  <meta title="author" content="Brent Jackson">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="css/gray.css">
+  <style>
+    body { color: #222 }
+    a { color: #08c }
+    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: #222 }
+    .container { max-width: 48rem; margin: 0 auto }
+    .border { border: 1px solid #ccc }
+    .rounded { border-radius: 3px }
+    pre { padding: 1rem }
+    pre, .bg-darken-1 { background-color: rgba(0,0,0,.03125) }
+    .bg-white { background-color: white }
+    
+    .sm-show { display: none }
+    @media (min-width:40em) { .sm-show { display: block } }
+  </style>
+</head>
+<body class="px3 container">
 
-  <body>
-  </body>
+  <header class="py2">
+    <h1>gray</h1>
+    <p>Colorless Basscss utility scaffolding</p>
+  </header>
+
+  <section id="intro" class="py3">
+    <p class="h3">
+      Basic scaffolding and utilities for starting any web project. No grid, no colors, no buttons, just the basics.
+    </p>
+  </section>
+
+  <section id="stats" class="py3">
+    <ul class="list-reset">
+      <li><b>1.11 kB</b></li>
+      <li><b>83</b> Rules</li>
+      <li><b>105</b> Selectors</li>
+      <li><b>181</b> Declarations</li>
+    </ul>
+  </section>
+
+  <ul class="p1 list-reset bg-white">
+    
+      <li>
+        <a href="#base-reset">
+          <b>
+            base-reset
+          </b>
+        </a>
+      </li>
+    
+      <li>
+        <a href="#base-typography">
+          <b>
+            base-typography
+          </b>
+        </a>
+      </li>
+    
+      <li>
+        <a href="#utility-layout">
+          <b>
+            utility-layout
+          </b>
+        </a>
+      </li>
+    
+      <li>
+        <a href="#utility-typography">
+          <b>
+            utility-typography
+          </b>
+        </a>
+      </li>
+    
+      <li>
+        <a href="#white-space">
+          <b>
+            white-space
+          </b>
+        </a>
+      </li>
+    
+  </ul>
+
+  
+    <section id="base-reset" class="py3">
+      <h1>
+        <a href="#base-reset">
+          base-reset
+        </a>
+      </h1>
+      <p>This module resets a few basic values for common elements, including margin 0 for the body and button elements,
+font-family inherit for form elements, max-width 100% for images, and max-height 100% for svg.</p>
+<p>Note: this reset does <strong>not</strong> set box-sizing to border-box using the universal selector.
+This is meant to discourage declaring widths unnecessarily throughout a stylesheet.
+The base form, grid, and flex-object modules use border-box where widths are used.</p>
+<p>If you would like to declare box-sizing border-box, use
+<a href="https://github.com/mrmrs/tachyons-box-sizing">tachyon-box-sizing</a>, which is fully compatible with Basscss.</p>
+<p>This reset intentionally does not normalize cross-browser discrepancies. If you would like to normalize styles, use <a href="http://necolas.github.io/normalize.css/">normalize.css</a>.</p>
+
+    </section>
+  
+    <section id="base-typography" class="py3">
+      <h1>
+        <a href="#base-typography">
+          base-typography
+        </a>
+      </h1>
+      <p>This module sets default typographic styles for the body, headings, paragraphs, lists, and other elements.</p>
+<h2 id="base-type-scale"><a href="#base-type-scale">Base type scale</a></h2><p>Typographic elements are normalized to a simple type scale that works well across devices. Default top and bottom margins are set for commonly-used typographic elements.</p>
+<div class="MarkedExample ">
+  <div class="MarkedExample-rendered ">
+    <h1>Hamburger 1</h1>
+<h2>Hamburger 2</h2>
+<h3>Hamburger 3</h3>
+<h4>Hamburger 4</h4>
+<h5>Hamburger 5</h5>
+<h6>Hamburger 6</h6>
+  </div>
+  <pre class="MarkedExample-code "><span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Hamburger 1<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Hamburger 2<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Hamburger 3<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h4</span>&gt;</span>Hamburger 4<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h5</span>&gt;</span>Hamburger 5<span class="hljs-tag">&lt;/<span class="hljs-title">h5</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h6</span>&gt;</span>Hamburger 6<span class="hljs-tag">&lt;/<span class="hljs-title">h6</span>&gt;</span></pre>
+</div>
+<h2 id="type-scale-utilities"><a href="#type-scale-utilities">Type scale utilities</a></h2><p>The <code>.h1</code> – <code>.h6</code> font-size utilities can be used to override an element’s default size.</p>
+<div class="MarkedExample ">
+  <div class="MarkedExample-rendered ">
+    <p class="h1">Pastrami 1</p>
+<p class="h2">Pastrami 2</p>
+<p class="h3">Pastrami 3</p>
+<p class="h4">Pastrami 4</p>
+<p class="h5">Pastrami 5</p>
+<p class="h6">Pastrami 6</p>
+  </div>
+  <pre class="MarkedExample-code "><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"h1"</span>&gt;</span>Pastrami 1<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"h2"</span>&gt;</span>Pastrami 2<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"h3"</span>&gt;</span>Pastrami 3<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"h4"</span>&gt;</span>Pastrami 4<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"h5"</span>&gt;</span>Pastrami 5<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"h6"</span>&gt;</span>Pastrami 6<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></pre>
+</div>
+<h2 id="lists"><a href="#lists">Lists</a></h2><p>By default, lists have bullets or numbers and padding left.</p>
+<div class="MarkedExample ">
+  <div class="MarkedExample-rendered ">
+    <ul>
+  <li>Half-Smoke</li>
+  <li>Kielbasa</li>
+  <li>Bologna</li>
+</ul>
+<ol>
+  <li>Prosciutto</li>
+  <li>Andouille</li>
+  <li>Bratwurst</li>
+  <li>Chorizo</li>
+</ol>
+  </div>
+  <pre class="MarkedExample-code "><span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Half-Smoke<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Kielbasa<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Bologna<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">ol</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Prosciutto<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Andouille<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Bratwurst<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Chorizo<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ol</span>&gt;</span></pre>
+</div>
+<p>To remove default list styling, use <code>.list-reset</code>.</p>
+<div class="MarkedExample ">
+  <div class="MarkedExample-rendered ">
+    <ul class="list-reset">
+  <li>List Reset</li>
+  <li>Removes bullets</li>
+  <li>Removes numbers</li>
+  <li>Removes padding</li>
+</ul>
+  </div>
+  <pre class="MarkedExample-code "><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"list-reset"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>List Reset<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Removes bullets<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Removes numbers<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Removes padding<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></pre>
+</div>
+<p>To set lists inline, use utilities.</p>
+<div class="MarkedExample ">
+  <div class="MarkedExample-rendered ">
+    <ul class="list-reset">
+  <li class="inline-block mr1">Half-Smoke</li>
+  <li class="inline-block mr1">Kielbasa</li>
+  <li class="inline-block mr1">Bologna</li>
+  <li class="inline-block mr1">Prosciutto</li>
+</ul>
+  </div>
+  <pre class="MarkedExample-code "><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"list-reset"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"inline-block mr1"</span>&gt;</span>Half-Smoke<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"inline-block mr1"</span>&gt;</span>Kielbasa<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"inline-block mr1"</span>&gt;</span>Bologna<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"inline-block mr1"</span>&gt;</span>Prosciutto<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></pre>
+</div>
+<h2 id="other-elements"><a href="#other-elements">Other Elements</a></h2><p>The pre element has overflow-x set to scroll.
+Blockquotes and hr have default margin and padding set.</p>
+<p>Adjust the custom properties to change the default font stack, font weights, and type scale.</p>
+
+    </section>
+  
+    <section id="utility-layout" class="py3">
+      <h1>
+        <a href="#utility-layout">
+          utility-layout
+        </a>
+      </h1>
+      <p>Change the default document flow with these display, float, and other utilities.</p>
+<h2 id="display"><a href="#display">Display</a></h2><p>To adjust the display of an element, use the <code>.block</code>, <code>.inline</code>, and <code>.inline-block</code> utilities.</p>
+<div class="MarkedExample ">
+  <div class="MarkedExample-rendered ">
+    <div class="inline">inline</div>
+<div class="inline-block">inline-block</div>
+<a href="#" class="block">block</a>
+  </div>
+  <pre class="MarkedExample-code "><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"inline"</span>&gt;</span>inline<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"inline-block"</span>&gt;</span>inline-block<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"block"</span>&gt;</span>block<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></pre>
+</div>
+<h2 id="overflow"><a href="#overflow">Overflow</a></h2><p>To adjust element overflow, use <code>.overflow-hidden</code>, <code>.overflow-scroll</code>, and <code>.overflow-auto</code>. 
+<code>.overflow-hidden</code> can also be used to create a new block formatting context or clear floats.</p>
+<h2 id="floats"><a href="#floats">Floats</a></h2><p>Use <code>.clearfix</code>, <code>.left</code>, and <code>.right</code> to clear and set floats.</p>
+<div class="MarkedExample ">
+  <div class="MarkedExample-rendered ">
+    <div class="clearfix border border-blue">
+  <div class="left border border-blue">.left</div>
+  <div class="right border border-blue">.right</div>
+</div>
+  </div>
+  <pre class="MarkedExample-code "><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"clearfix border border-blue"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"left border border-blue"</span>&gt;</span>.left<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"right border border-blue"</span>&gt;</span>.right<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+</div>
+<h2 id="widths"><a href="#widths">Widths</a></h2><p>Use <code>.fit</code> to set max-width 100%. <code>.full-width</code> and <code>.half-width</code> set widths to 100% and 50% respectively.</p>
+<h2 id="media-object"><a href="#media-object">Media Object</a></h2><p>Create a media object using basic utilities.</p>
+<div class="MarkedExample ">
+  <div class="MarkedExample-rendered ">
+    <div class="clearfix mb2 border border-blue">
+  <div class="left p2 mr1 border border-blue">Image</div>
+  <div class="overflow-hidden">
+    <p><b>Body</b> Bacon ipsum dolor sit amet chuck prosciutto landjaeger ham hock filet mignon shoulder hamburger pig venison.</p>
+  </div>
+</div>
+  </div>
+  <pre class="MarkedExample-code "><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"clearfix mb2 border border-blue"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"left p2 mr1 border border-blue"</span>&gt;</span>Image<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"overflow-hidden"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Body<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> Bacon ipsum dolor sit amet chuck prosciutto landjaeger ham hock filet mignon shoulder hamburger pig venison.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+</div>
+<h2 id="double-sided-media-object"><a href="#double-sided-media-object">Double-Sided Media Object</a></h2><p>For a container with a flexible center, use a double-sided media object.</p>
+<div class="MarkedExample ">
+  <div class="MarkedExample-rendered ">
+    <div class="clearfix mb2 border border-blue">
+  <div class="left p2 mr1 border border-blue">Image</div>
+  <div class="right p2 ml1 border border-blue">Image</div>
+  <div class="overflow-hidden">
+    <p><b>Body</b> Bacon ipsum dolor sit amet chuck prosciutto landjaeger ham hock filet mignon shoulder hamburger pig venison.</p>
+  </div>
+</div>
+  </div>
+  <pre class="MarkedExample-code "><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"clearfix mb2 border border-blue"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"left p2 mr1 border border-blue"</span>&gt;</span>Image<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"right p2 ml1 border border-blue"</span>&gt;</span>Image<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"overflow-hidden"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Body<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> Bacon ipsum dolor sit amet chuck prosciutto landjaeger ham hock filet mignon shoulder hamburger pig venison.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+</div>
+
+    </section>
+  
+    <section id="utility-typography" class="py3">
+      <h1>
+        <a href="#utility-typography">
+          utility-typography
+        </a>
+      </h1>
+      <p>Change typographic weights, styles, and alignment with these utility styles.</p>
+<div class="MarkedExample ">
+  <div class="MarkedExample-rendered ">
+    <p class="bold">Bold</p>
+<p class="regular">Regular</p>
+<p class="italic">Italic</p>
+<p class="caps">Caps</p>
+<p class="left-align">Left align</p>
+<p class="center">Center</p>
+<p class="right-align">Right align</p>
+<p class="justify">Justify Bacon ipsum dolor sit amet chuck prosciutto landjaeger ham hock filet mignon shoulder hamburger pig venison.</p>
+<p class="nowrap">No wrap</p>
+  </div>
+  <pre class="MarkedExample-code "><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bold"</span>&gt;</span>Bold<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"regular"</span>&gt;</span>Regular<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"italic"</span>&gt;</span>Italic<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"caps"</span>&gt;</span>Caps<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"left-align"</span>&gt;</span>Left align<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"center"</span>&gt;</span>Center<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"right-align"</span>&gt;</span>Right align<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"justify"</span>&gt;</span>Justify Bacon ipsum dolor sit amet chuck prosciutto landjaeger ham hock filet mignon shoulder hamburger pig venison.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nowrap"</span>&gt;</span>No wrap<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></pre>
+</div>
+
+    </section>
+  
+    <section id="white-space" class="py3">
+      <h1>
+        <a href="#white-space">
+          white-space
+        </a>
+      </h1>
+      <p>Immutable margin and padding utilities are based on a global white space scale defined with custom properties.
+These can dramatically help reduce the size of large stylesheets and allow for greater flexibility and quicker iteration when designing in the browser.</p>
+<h2 id="naming-convention"><a href="#naming-convention">Naming Convention</a></h2><p>Due to the ubiquitous nature of setting margin and padding,
+these utilities use a shorthand naming convention.</p>
+<div class="overflow-scroll">
+  <table class="mb2 table-flush table-light">
+    <thead>
+      <tr> <th>Shorthand</th> <th>Description</th> </tr>
+    </thead>
+    <tbody>
+      <tr> <td>m</td> <td>Margin</td> </tr>
+      <tr> <td>p</td> <td>Padding</td> </tr>
+      <tr> <td>t</td> <td>Top</td> </tr>
+      <tr> <td>r</td> <td>Right</td> </tr>
+      <tr> <td>b</td> <td>Bottom</td> </tr>
+      <tr> <td>l</td> <td>Left</td> </tr>
+      <tr> <td>x</td> <td>X-axis (left and right)</td> </tr>
+      <tr> <td>y</td> <td>Y-axis (top and bottom)</td> </tr>
+      <tr> <td>n</td> <td>Negative (margin only)</td> </tr>
+      <tr> <td>1</td> <td>--space-1 (default .5rem)</td> </tr>
+      <tr> <td>2</td> <td>--space-2 (default 1rem)</td> </tr>
+      <tr> <td>3</td> <td>--space-3 (default 2rem)</td> </tr>
+      <tr> <td>4</td> <td>--space-4 (default 4rem)</td> </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 id="margins"><a href="#margins">Margins</a></h2><p>Change or reset default margins using the white space scale.
+Negative x-axis margins are used to offset margins and padding of child elements.
+Margin auto is used to horizontally center block-level elements with a set width.</p>
+<pre><span class="hljs-class">.m0</span>  <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value">        <span class="hljs-number">0</span> }
+.mt0 { margin-top:    <span class="hljs-number">0</span> }
+.mr0 { margin-right:  <span class="hljs-number">0</span> }
+.mb0 { margin-bottom: <span class="hljs-number">0</span> }
+.ml0 { margin-left:   <span class="hljs-number">0</span> }
+
+.m1  { margin:        <span class="hljs-function">var</span>(--space-<span class="hljs-number">1</span>) }
+.mt1 { margin-top:    <span class="hljs-function">var</span>(--space-<span class="hljs-number">1</span>) }
+.mr1 { margin-right:  <span class="hljs-function">var</span>(--space-<span class="hljs-number">1</span>) }
+.mb1 { margin-bottom: <span class="hljs-function">var</span>(--space-<span class="hljs-number">1</span>) }
+.ml1 { margin-left:   <span class="hljs-function">var</span>(--space-<span class="hljs-number">1</span>) }
+
+.m2  { margin:        <span class="hljs-function">var</span>(--space-<span class="hljs-number">2</span>) }
+.mt2 { margin-top:    <span class="hljs-function">var</span>(--space-<span class="hljs-number">2</span>) }
+.mr2 { margin-right:  <span class="hljs-function">var</span>(--space-<span class="hljs-number">2</span>) }
+.mb2 { margin-bottom: <span class="hljs-function">var</span>(--space-<span class="hljs-number">2</span>) }
+.ml2 { margin-left:   <span class="hljs-function">var</span>(--space-<span class="hljs-number">2</span>) }
+
+.m3  { margin:        <span class="hljs-function">var</span>(--space-<span class="hljs-number">3</span>) }
+.mt3 { margin-top:    <span class="hljs-function">var</span>(--space-<span class="hljs-number">3</span>) }
+.mr3 { margin-right:  <span class="hljs-function">var</span>(--space-<span class="hljs-number">3</span>) }
+.mb3 { margin-bottom: <span class="hljs-function">var</span>(--space-<span class="hljs-number">3</span>) }
+.ml3 { margin-left:   <span class="hljs-function">var</span>(--space-<span class="hljs-number">3</span>) }
+
+.m4  { margin:        <span class="hljs-function">var</span>(--space-<span class="hljs-number">4</span>) }
+.mt4 { margin-top:    <span class="hljs-function">var</span>(--space-<span class="hljs-number">4</span>) }
+.mr4 { margin-right:  <span class="hljs-function">var</span>(--space-<span class="hljs-number">4</span>) }
+.mb4 { margin-bottom: <span class="hljs-function">var</span>(--space-<span class="hljs-number">4</span>) }
+.ml4 { margin-left:   <span class="hljs-function">var</span>(--space-<span class="hljs-number">4</span>) }
+
+.mxn1 { margin-left: <span class="hljs-function">-var</span>(--space-<span class="hljs-number">1</span>)</span></span>; <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> <span class="hljs-function">-var</span>(--space-<span class="hljs-number">1</span>)</span></span>; }</span>
+<span class="hljs-class">.mxn2</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">margin-left</span>:<span class="hljs-value"> <span class="hljs-function">-var</span>(--space-<span class="hljs-number">2</span>)</span></span>; <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> <span class="hljs-function">-var</span>(--space-<span class="hljs-number">2</span>)</span></span>; }</span>
+<span class="hljs-class">.mxn3</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">margin-left</span>:<span class="hljs-value"> <span class="hljs-function">-var</span>(--space-<span class="hljs-number">3</span>)</span></span>; <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> <span class="hljs-function">-var</span>(--space-<span class="hljs-number">3</span>)</span></span>; }</span>
+<span class="hljs-class">.mxn4</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">margin-left</span>:<span class="hljs-value"> <span class="hljs-function">-var</span>(--space-<span class="hljs-number">4</span>)</span></span>; <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> <span class="hljs-function">-var</span>(--space-<span class="hljs-number">4</span>)</span></span>; }</span>
+
+<span class="hljs-class">.mx-auto</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">margin-left</span>:<span class="hljs-value"> auto</span></span>; <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> auto</span></span>; }</span></pre><h2 id="padding"><a href="#padding">Padding</a></h2><p>Padding utilities are only available in symmetrical orientations.
+This is to normalize the spacing used around elements and maintain a consistent visual rhythm.</p>
+<pre><span class="hljs-class">.p1</span>  <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value">       <span class="hljs-function">var</span>(--space-<span class="hljs-number">1</span>) }
+.py1 { padding-top:   <span class="hljs-function">var</span>(--space-<span class="hljs-number">1</span>)</span></span>; <span class="hljs-rule"><span class="hljs-attribute">padding-bottom</span>:<span class="hljs-value"> <span class="hljs-function">var</span>(--space-<span class="hljs-number">1</span>) }
+.px1 { padding-left:  <span class="hljs-function">var</span>(--space-<span class="hljs-number">1</span>)</span></span>; <span class="hljs-rule"><span class="hljs-attribute">padding-right</span>:<span class="hljs-value">  <span class="hljs-function">var</span>(--space-<span class="hljs-number">1</span>) }
+
+.p2  { padding:       <span class="hljs-function">var</span>(--space-<span class="hljs-number">2</span>) }
+.py2 { padding-top:   <span class="hljs-function">var</span>(--space-<span class="hljs-number">2</span>)</span></span>; <span class="hljs-rule"><span class="hljs-attribute">padding-bottom</span>:<span class="hljs-value"> <span class="hljs-function">var</span>(--space-<span class="hljs-number">2</span>) }
+.px2 { padding-left:  <span class="hljs-function">var</span>(--space-<span class="hljs-number">2</span>)</span></span>; <span class="hljs-rule"><span class="hljs-attribute">padding-right</span>:<span class="hljs-value">  <span class="hljs-function">var</span>(--space-<span class="hljs-number">2</span>) }
+
+.p3  { padding:       <span class="hljs-function">var</span>(--space-<span class="hljs-number">3</span>) }
+.py3 { padding-top:   <span class="hljs-function">var</span>(--space-<span class="hljs-number">3</span>)</span></span>; <span class="hljs-rule"><span class="hljs-attribute">padding-bottom</span>:<span class="hljs-value"> <span class="hljs-function">var</span>(--space-<span class="hljs-number">3</span>) }
+.px3 { padding-left:  <span class="hljs-function">var</span>(--space-<span class="hljs-number">3</span>)</span></span>; <span class="hljs-rule"><span class="hljs-attribute">padding-right</span>:<span class="hljs-value">  <span class="hljs-function">var</span>(--space-<span class="hljs-number">3</span>) }
+
+.p4  { padding:       <span class="hljs-function">var</span>(--space-<span class="hljs-number">4</span>) }
+.py4 { padding-top:   <span class="hljs-function">var</span>(--space-<span class="hljs-number">4</span>)</span></span>; <span class="hljs-rule"><span class="hljs-attribute">padding-bottom</span>:<span class="hljs-value"> <span class="hljs-function">var</span>(--space-<span class="hljs-number">4</span>) }
+.px4 { padding-left:  <span class="hljs-function">var</span>(--space-<span class="hljs-number">4</span>)</span></span>; <span class="hljs-rule"><span class="hljs-attribute">padding-right</span>:<span class="hljs-value">  <span class="hljs-function">var</span>(--space-<span class="hljs-number">4</span>) }</span></span></span></pre><h2 id="resetting-margins"><a href="#resetting-margins">Resetting Margins</a></h2><p>To increase information density and to better align elements, remove default margins from typographic elements
+using the margin utilities.</p>
+<div class="MarkedExample ">
+  <div class="MarkedExample-rendered ">
+    <h1 class="m0">No margin</h1>
+<h1 class="mt0">No margin top</h1>
+<h1 class="mb0">No margin bottom</h1>
+  </div>
+  <pre class="MarkedExample-code "><span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"m0"</span>&gt;</span>No margin<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"mt0"</span>&gt;</span>No margin top<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"mb0"</span>&gt;</span>No margin bottom<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span></pre>
+</div>
+<h2 id="add-spacing"><a href="#add-spacing">Add Spacing</a></h2><p>Add spacing around elements using a combination of margin utilities.</p>
+<div class="MarkedExample ">
+  <div class="MarkedExample-rendered ">
+    <div class="mxn1">
+  <button class="button m1">Button</button>
+  <button class="button m1">Button</button>
+  <button class="button m1">Button</button>
+</div>
+  </div>
+  <pre class="MarkedExample-code "><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"mxn1"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button m1"</span>&gt;</span>Button<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button m1"</span>&gt;</span>Button<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button m1"</span>&gt;</span>Button<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+</div>
+<p>The negative margin utilities also work with padded children.</p>
+<div class="MarkedExample ">
+  <div class="MarkedExample-rendered ">
+    <div class="border border-blue">
+  <div class="mxn2">
+    <div class="px2 border border-blue">Padded div</div>
+  </div>
+</div>
+  </div>
+  <pre class="MarkedExample-code "><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"border border-blue"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"mxn2"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"px2 border border-blue"</span>&gt;</span>Padded div<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+</div>
+<h2 id="center-elements"><a href="#center-elements">Center Elements</a></h2><p>Block elements with a set width can be centered with <code>.mx-auto</code>.</p>
+<div class="MarkedExample ">
+  <div class="MarkedExample-rendered ">
+    <div>
+  <img src="http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg"
+    width="96"
+    height="96"
+    class="block mx-auto" />
+</div>
+  </div>
+  <pre class="MarkedExample-code "><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://d2v52k3cl9vedd.cloudfront.net/assets/images/placeholder-square.svg"</span>
+    <span class="hljs-attribute">width</span>=<span class="hljs-value">"96"</span>
+    <span class="hljs-attribute">height</span>=<span class="hljs-value">"96"</span>
+    <span class="hljs-attribute">class</span>=<span class="hljs-value">"block mx-auto"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+</div>
+<h2 id="box"><a href="#box">Box</a></h2><p>To create a simple box component, use padding along with color utilities.</p>
+<div class="MarkedExample ">
+  <div class="MarkedExample-rendered ">
+    <div class="p2 bg-white border rounded">
+  A simple box
+</div>
+  </div>
+  <pre class="MarkedExample-code "><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"p2 bg-white border rounded"</span>&gt;</span>
+  A simple box
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+</div>
+<div class="MarkedExample ">
+  <div class="MarkedExample-rendered ">
+    <div class="overflow-hidden border rounded">
+  <div class="p2 bold white bg-blue">
+    Panel Header
+  </div>
+  <div class="p2">
+    Panel Body
+  </div>
+  <div class="p2 bg-silver">
+    Panel Footer
+  </div>
+</div>
+  </div>
+  <pre class="MarkedExample-code "><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"overflow-hidden border rounded"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"p2 bold white bg-blue"</span>&gt;</span>
+    Panel Header
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"p2"</span>&gt;</span>
+    Panel Body
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"p2 bg-silver"</span>&gt;</span>
+    Panel Footer
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+</div>
+<p><span class="red">Margins and padding should never be declared outside of these utilities.</span>
+This is meant to help create consistency and avoid magic numbers.
+If, for some reason, the default white space scale does not suit your design,
+customize and extend it before using it.</p>
+<p>For larger scale projects, breakpoint-based responsive white space utilities are available in the <code>basscss-responsive-white-space</code> module (not included in the default Basscss).</p>
+
+    </section>
+  
+
+
+
+  
+
+</body>
 </html>
