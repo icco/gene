@@ -8,13 +8,7 @@
 @import 'basscss-base-buttons';
 @import 'basscss-base-tables';
  * */
-body, button { margin: 0 }
-
-button, input, select, textarea {
-  font-family: inherit;
-  font-size: 100%;
-}
-
+body { margin: 0 }
 img { max-width: 100% }
 svg { max-height: 100% }
 /* Basscss Base Typography */
@@ -33,7 +27,15 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: .5em;
 }
 
-p, dl, ol, ul {
+p {
+  font-size: 16px;
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 16px;
+  margin-bottom: 1rem;
+}
+
+dl, ol, ul {
   font-size: 16px;
   font-size: 1rem;
   margin-top: 0;
@@ -61,22 +63,18 @@ hr {
 }
 
 blockquote {
-  margin-top: 32px;
-  margin-top: 2rem;
-  margin-bottom: 32px;
-  margin-bottom: 2rem;
-  margin-left: 0;
-  padding-left: 16px;
-  padding-left: 1rem;
-  padding-right: 16px;
-  padding-right: 1rem;
+  margin: 32px 0;
+  margin: 2rem 0;
+  padding: 0 16px;
+  padding: 0 1rem;
 }
-  blockquote,
-  blockquote p {
-    font-size: 20px;
-    font-size: 1.25rem;
-    font-style: italic;
-  }
+
+blockquote,
+blockquote p {
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-style: italic;
+}
 
 h1, .h1 { font-size: 32px; font-size: 2rem }
 h2, .h2 { font-size: 24px; font-size: 1.5rem }
@@ -119,6 +117,8 @@ h6, .h6 { font-size: 12px; font-size: .75rem }
 .inline       { display: inline }
 .block        { display: block }
 .inline-block { display: inline-block }
+.table        { display: table }
+.table-cell   { display: table-cell }
 
 .overflow-hidden { overflow: hidden }
 .overflow-scroll { overflow: scroll }
