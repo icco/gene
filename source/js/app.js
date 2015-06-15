@@ -63,8 +63,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
       var el_in_col = document.querySelectorAll(".beat[data-column='"+column+"']");
       for (var k in highlight) {
         var cls = highlight[k];
-        el_in_col.item(i).classList.toggle(cls);
-        el_in_prev_col.item(i).classList.toggle(cls);
+        el_in_prev_col.item(i).classList.remove(cls);
+        el_in_col.item(i).classList.add(cls);
       }
     }
     column = (column + 1) % columns;
