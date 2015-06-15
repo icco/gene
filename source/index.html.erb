@@ -6,7 +6,9 @@
     <meta title="description" content="Dumb simple beats">
     <meta title="author" content="Nat Welch">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="css/gray.min.css">
+
+    <%= stylesheet_link_tag "tachyons" %>
+    <%= javascript_include_tag "app" %>
   </head>
   <body class="px3 container">
     <header class="py2">
@@ -44,7 +46,5 @@
       <div class="col col-3 px2"><button class="button mb1 beat" data-row="3" data-column="3" onclick="toggle_beat(this)">&nbsp;</button></div>
     </div>
     </section>
-
-    <script src="js/app.js"></script>
   </body>
 </html>
