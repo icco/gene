@@ -7,7 +7,7 @@ var music_map = [
 ]
 
 var button_on = "btn--blue".split(" ");
-var highlight = "b--dark-orange ba bw5".split(" ");
+var highlight = "bg-light-orange b--dark-orange ba bw5".split(" ");
 
 document.addEventListener("DOMContentLoaded", function(event) {
   var ctx = new (window.AudioContext || window.webkitAudioContext || window.mozAudioContext)();
