@@ -21,30 +21,13 @@
     </section>
 
     <section id="btns" class="pvm">
-    <div class="clearfix">
-      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="0" data-column="0" onclick="toggle_beat(this)">&nbsp;</button></div>
-      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="0" data-column="1" onclick="toggle_beat(this)">&nbsp;</button></div>
-      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="0" data-column="2" onclick="toggle_beat(this)">&nbsp;</button></div>
-      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="0" data-column="3" onclick="toggle_beat(this)">&nbsp;</button></div>
-    </div>
-    <div class="clearfix">
-      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="1" data-column="0" onclick="toggle_beat(this)">&nbsp;</button></div>
-      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="1" data-column="1" onclick="toggle_beat(this)">&nbsp;</button></div>
-      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="1" data-column="2" onclick="toggle_beat(this)">&nbsp;</button></div>
-      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="1" data-column="3" onclick="toggle_beat(this)">&nbsp;</button></div>
-    </div>
-    <div class="clearfix">
-      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="2" data-column="0" onclick="toggle_beat(this)">&nbsp;</button></div>
-      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="2" data-column="1" onclick="toggle_beat(this)">&nbsp;</button></div>
-      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="2" data-column="2" onclick="toggle_beat(this)">&nbsp;</button></div>
-      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="2" data-column="3" onclick="toggle_beat(this)">&nbsp;</button></div>
-    </div>
-    <div class="clearfix">
-      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="3" data-column="0" onclick="toggle_beat(this)">&nbsp;</button></div>
-      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="3" data-column="1" onclick="toggle_beat(this)">&nbsp;</button></div>
-      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="3" data-column="2" onclick="toggle_beat(this)">&nbsp;</button></div>
-      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="3" data-column="3" onclick="toggle_beat(this)">&nbsp;</button></div>
-    </div>
+    <% (0...4).each do |row| %>
+      <div class="clearfix" style="overflow-x: scroll; width: 160em">
+        <% (0...16).each do |col| %>
+          <div class="di pvs"><button class="w4 h4 btn mbs beat" data-row="<%= row %>" data-column="<%= col %>" onclick="toggle_beat(this)">&nbsp;</button></div>
+        <% end %>
+      </div>
+    <% end %>
     </section>
   </body>
 </html>

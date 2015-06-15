@@ -11,11 +11,15 @@ var highlight = "bg-light-orange b--dark-orange ba bw5".split(" ");
 
 document.addEventListener("DOMContentLoaded", function(event) {
   var ctx = new (window.AudioContext || window.webkitAudioContext || window.mozAudioContext)();
-  var columns = 4;
+
+  var columns = 16;
+  var measure = 4;
+  var rows = music_map.length;
+
   // Also known as Beats per Minute.
   var tempo = 96;
   // Basically the number at which we play an audio file.
-  var beat = (60 / tempo) / columns;
+  var beat = (60 / tempo) / measure;
   var beat_urls = [
     "music/clicks.mp3",
     "music/hat.mp3",
@@ -50,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   var intervalID = window.setInterval(function() {
     var time = startTime * 8 * eighthNoteTime;
-    for (var i = 0; i < columns; i++) {
+    for (var i = 0; i < rows; i++) {
       if (music_map[i][column]) {
         playSound(ctx, beats[i], time);
       }
