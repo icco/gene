@@ -6,8 +6,11 @@ var music_map = [
   [1, 0, 0, 0],
 ]
 
-document.addEventListener("DOMContentLoaded", function(event) { 
-  var ctx = new (window.AudioContext || window.webkitAudioContext || window.mozAudioContext)(); 
+var button_on = "btn--blue".split(" ");
+var highlight = "b--dark-orange ba bw5".split(" ");
+
+document.addEventListener("DOMContentLoaded", function(event) {
+  var ctx = new (window.AudioContext || window.webkitAudioContext || window.mozAudioContext)();
   var columns = 4;
   // Also known as Beats per Minute.
   var tempo = 96;
@@ -26,6 +29,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
   buffers.load();
 
+  for (var j in music_map) {
+    for (var k in music_map[j]) {
+      if (music_map[j][k]) {
+
+        for (var c in button_on) {
+          var cls = button_on[c];
+          var els = document.querySelectorAll(".beat[data-column='"+k+"'][data-row='"+j+"']");
+
+          els[0].classList.toggle(cls);
+        }
+      }
+    }
+  }
+
+
   var column = 0;
   var startTime = ctx.currentTime;
   var eighthNoteTime = beat;
@@ -40,11 +58,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     for (var i in beats) {
       prev_col = (column + (columns -1)) % columns;
-    
+
       var el_in_prev_col = document.querySelectorAll(".beat[data-column='"+prev_col+"']");
       var el_in_col = document.querySelectorAll(".beat[data-column='"+column+"']");
-      el_in_col.item(i).classList.toggle("highlight");
-      el_in_prev_col.item(i).classList.toggle("highlight");
+      for (var k in highlight) {
+        var cls = highlight[k];
+        el_in_col.item(i).classList.toggle(cls);
+        el_in_prev_col.item(i).classList.toggle(cls);
+      }
     }
     column = (column + 1) % columns;
   }, beat * 1000);
@@ -122,6 +143,11 @@ function toggle_music() {
 function toggle_beat(el) {
   var row = el.dataset.row;
   var column = el.dataset.column;
+
+  for (var k in button_on) {
+    var cls = button_on[k];
+    el.classList.toggle(cls);
+  }
 
   music_map[row][column] ^= 1;
 }
