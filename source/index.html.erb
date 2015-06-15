@@ -7,43 +7,43 @@
     <meta title="author" content="Nat Welch">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <%= stylesheet_link_tag "tachyons" %>
+    <%= stylesheet_link_tag "tachyons", "buttons" %>
     <%= javascript_include_tag "app" %>
   </head>
-  <body class="px3 container">
-    <header class="py2">
+  <body class="center sans-serif mw7">
+    <header class="pvm lh-title">
     <h1>gene</h1>
-    <p>Dumb simple beats</p>
+    <h2 class="f4 book">Dumb simple beats</h2>
     </header>
 
     <section id="controls" class="">
-      <button class="h3 button-outline border-thick" onclick="toggle_music()" id="pause">Pause</button>
+      <button class="f3 btn pam" onclick="toggle_music()" id="pause">Pause</button>
     </section>
 
-    <section id="buttons" class="py3">
-    <div class="mxn2 clearfix">
-      <div class="col col-3 px2"><button class="button mb1 beat" data-row="0" data-column="0" onclick="toggle_beat(this)">&nbsp;</button></div>
-      <div class="col col-3 px2"><button class="button mb1 beat" data-row="0" data-column="1" onclick="toggle_beat(this)">&nbsp;</button></div>
-      <div class="col col-3 px2"><button class="button mb1 beat" data-row="0" data-column="2" onclick="toggle_beat(this)">&nbsp;</button></div>
-      <div class="col col-3 px2"><button class="button mb1 beat" data-row="0" data-column="3" onclick="toggle_beat(this)">&nbsp;</button></div>
+    <section id="btns" class="pvm">
+    <div class="clearfix">
+      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="0" data-column="0" onclick="toggle_beat(this)">&nbsp;</button></div>
+      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="0" data-column="1" onclick="toggle_beat(this)">&nbsp;</button></div>
+      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="0" data-column="2" onclick="toggle_beat(this)">&nbsp;</button></div>
+      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="0" data-column="3" onclick="toggle_beat(this)">&nbsp;</button></div>
     </div>
-    <div class="mxn2 clearfix">
-      <div class="col col-3 px2"><button class="button mb1 beat" data-row="1" data-column="0" onclick="toggle_beat(this)">&nbsp;</button></div>
-      <div class="col col-3 px2"><button class="button mb1 beat" data-row="1" data-column="1" onclick="toggle_beat(this)">&nbsp;</button></div>
-      <div class="col col-3 px2"><button class="button mb1 beat" data-row="1" data-column="2" onclick="toggle_beat(this)">&nbsp;</button></div>
-      <div class="col col-3 px2"><button class="button mb1 beat" data-row="1" data-column="3" onclick="toggle_beat(this)">&nbsp;</button></div>
+    <div class="clearfix">
+      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="1" data-column="0" onclick="toggle_beat(this)">&nbsp;</button></div>
+      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="1" data-column="1" onclick="toggle_beat(this)">&nbsp;</button></div>
+      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="1" data-column="2" onclick="toggle_beat(this)">&nbsp;</button></div>
+      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="1" data-column="3" onclick="toggle_beat(this)">&nbsp;</button></div>
     </div>
-    <div class="mxn2 clearfix">
-      <div class="col col-3 px2"><button class="button mb1 beat" data-row="2" data-column="0" onclick="toggle_beat(this)">&nbsp;</button></div>
-      <div class="col col-3 px2"><button class="button mb1 beat" data-row="2" data-column="1" onclick="toggle_beat(this)">&nbsp;</button></div>
-      <div class="col col-3 px2"><button class="button mb1 beat" data-row="2" data-column="2" onclick="toggle_beat(this)">&nbsp;</button></div>
-      <div class="col col-3 px2"><button class="button mb1 beat" data-row="2" data-column="3" onclick="toggle_beat(this)">&nbsp;</button></div>
+    <div class="clearfix">
+      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="2" data-column="0" onclick="toggle_beat(this)">&nbsp;</button></div>
+      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="2" data-column="1" onclick="toggle_beat(this)">&nbsp;</button></div>
+      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="2" data-column="2" onclick="toggle_beat(this)">&nbsp;</button></div>
+      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="2" data-column="3" onclick="toggle_beat(this)">&nbsp;</button></div>
     </div>
-    <div class="mxn2 clearfix">
-      <div class="col col-3 px2"><button class="button mb1 beat" data-row="3" data-column="0" onclick="toggle_beat(this)">&nbsp;</button></div>
-      <div class="col col-3 px2"><button class="button mb1 beat" data-row="3" data-column="1" onclick="toggle_beat(this)">&nbsp;</button></div>
-      <div class="col col-3 px2"><button class="button mb1 beat" data-row="3" data-column="2" onclick="toggle_beat(this)">&nbsp;</button></div>
-      <div class="col col-3 px2"><button class="button mb1 beat" data-row="3" data-column="3" onclick="toggle_beat(this)">&nbsp;</button></div>
+    <div class="clearfix">
+      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="3" data-column="0" onclick="toggle_beat(this)">&nbsp;</button></div>
+      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="3" data-column="1" onclick="toggle_beat(this)">&nbsp;</button></div>
+      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="3" data-column="2" onclick="toggle_beat(this)">&nbsp;</button></div>
+      <div class="di pvs"><button class="w-20 h4 btn mbs beat" data-row="3" data-column="3" onclick="toggle_beat(this)">&nbsp;</button></div>
     </div>
     </section>
   </body>
