@@ -1,0 +1,75 @@
+/*! Basic | Colorless, scaffolding theme for Basscss */
+
+
+@import 'normalize.css';
+
+@import 'basscss-base-forms';
+@import 'basscss-base-buttons';
+@import 'basscss-base-tables';
+
+@import 'basscss-base-reset';
+@import 'basscss-base-typography';
+
+@import 'basscss-utility-layout';
+@import 'basscss-utility-typography';
+@import 'basscss-white-space';
+
+@import 'basscss-responsive-states';
+@import 'basscss-positions';
+@import 'basscss-grid';
+@import 'flex-object';
+
+@import 'basscss-defaults';
+
+/* Site specific stuff */
+body {
+  color: #222;
+}
+
+a {
+  color: #08c;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: #222;
+}
+
+.container {
+  max-width: 21rem;
+  margin: 0 auto;
+}
+
+.border {
+  border: 1px solid #ccc;
+}
+
+.rounded {
+  border-radius: 3px;
+}
+
+pre {
+  padding: 1rem;
+}
+
+pre, .bg-darken-1 {
+  background-color: rgba(0,0,0,.03125);
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.sm-show {
+  display: none;
+}
+
+@media (min-width:40em) {
+  .sm-show {
+    display: block;
+  }
+}
+
+.beat {
+  height: 5rem;
+  width:  5rem;
+}
