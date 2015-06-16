@@ -1,10 +1,30 @@
+
+// Global for pausing music
 var paused = false;
-var music_map = [
-  [1, 0, 0, 0,    0, 0, 0, 0,    0, 0, 0, 0,    0, 0, 0, 0],
-  [1, 0, 0, 0,    1, 0, 0, 0,    1, 0, 0, 0,    1, 0, 0, 0],
-  [0, 0, 1, 0,    0, 0, 1, 0,    0, 0, 1, 0,    0, 0, 1, 0],
-  [0, 0, 0, 0,    0, 0, 0, 0,    0, 0, 0, 0,    0, 0, 0, 0],
-]
+
+// TODO(icco): Turn this into an object with properties.
+var music_map = "0:1000000000000000,1:1000100010001000,2:0010001000100010,3:0000000000000000";
+
+function twod_to_map(twod) {
+  return twod.map(function(val, idx) {
+    return idx + ":" + val.join("")
+  }).join(",");
+}
+
+function map_to_twod(map) {
+  var rows = map.split(",");
+  var ret = [];
+
+  for (var r in rows) {
+    var data = rows[r].split(":");
+    var id = parseInt(data[0], 10);
+    ret[data[0]] = data[1].split("").map(function(num) {
+      return parseInt(num, 10);
+    });
+  }
+
+  return ret;
+}
 
 var button_on = "btn--blue".split(" ");
 var highlight = "bg-light-orange b--dark-orange ba bw5".split(" ");
@@ -14,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   var columns = 16;
   var measure = 4;
-  var rows = music_map.length;
+  var rows = music_map.split(",").length;
 
   // Also known as Beats per Minute.
   var tempo = 96;
@@ -33,29 +53,32 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
   buffers.load();
 
-  for (var j in music_map) {
-    for (var k in music_map[j]) {
-      if (music_map[j][k]) {
-
+  var twod = map_to_twod(music_map);
+  for (var j in twod) {
+    for (var k in twod[j]) {
+      if (twod[j][k]) {
         for (var c in button_on) {
           var cls = button_on[c];
           var els = document.querySelectorAll(".beat[data-column='"+k+"'][data-row='"+j+"']");
 
-          els[0].classList.toggle(cls);
+          // Make sure element is on screen
+          if (els.length > 0) {
+            els[0].classList.toggle(cls);
+          }
         }
       }
     }
   }
-
 
   var column = 0;
   var startTime = ctx.currentTime;
   var eighthNoteTime = beat;
 
   var intervalID = window.setInterval(function() {
+    var twod = map_to_twod(music_map);
     var time = startTime * 8 * eighthNoteTime;
     for (var i = 0; i < rows; i++) {
-      if (music_map[i][column]) {
+      if (twod[i][column]) {
         playSound(ctx, beats[i], time);
       }
     }
@@ -153,5 +176,7 @@ function toggle_beat(el) {
     el.classList.toggle(cls);
   }
 
-  music_map[row][column] ^= 1;
+  var twod = map_to_twod(music_map);
+  twod[row][column] ^= 1;
+  music_map = twod_to_map(twod)
 }
