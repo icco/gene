@@ -83,15 +83,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
       }
     }
 
-    for (var i in beats) {
+    for (var i = 0; i < rows; i++) {
       prev_col = (column + (columns -1)) % columns;
 
       var el_in_prev_col = document.querySelectorAll(".beat[data-column='"+prev_col+"']");
       var el_in_col = document.querySelectorAll(".beat[data-column='"+column+"']");
       for (var k in highlight) {
         var cls = highlight[k];
-        el_in_prev_col.item(i).classList.remove(cls);
-        el_in_col.item(i).classList.add(cls);
+        if (el_in_prev_col.length) {
+          el_in_prev_col.item(i).classList.remove(cls);
+        }
+
+        if (el_in_col.length) {
+          el_in_col.item(i).classList.add(cls);
+        }
       }
     }
     column = (column + 1) % columns;
