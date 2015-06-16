@@ -22,7 +22,7 @@
 
     <section id="btns" class="pvm">
     <% (0...4).each do |row| %>
-      <div class="clearfix" style="overflow-x: scroll; width: 160em">
+      <div class="clearfix w8">
         <% (0...16).each do |col| %>
           <div class="di pvs"><button class="w4 h4 btn mbs beat" data-row="<%= row %>" data-column="<%= col %>" onclick="toggle_beat(this)">&nbsp;</button></div>
         <% end %>
