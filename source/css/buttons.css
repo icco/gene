@@ -136,3 +136,8 @@
     max-width: 16em!important;
   }
 }
+
+/* Random hacks */
+.w8 {
+  width: 140rem;
+}
