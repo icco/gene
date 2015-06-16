@@ -10,21 +10,18 @@
     <%= stylesheet_link_tag "tachyons", "buttons" %>
     <%= javascript_include_tag "app" %>
   </head>
-  <body class="center sans-serif mw7">
+  <body class="sans-serif mw6 mam">
     <header class="pvm lh-title">
+    <button class="fr btn mvm pam" onclick="toggle_music()" id="pause">Pause</button>
     <h1>gene</h1>
     <h2 class="f4 book">Dumb simple beats</h2>
     </header>
 
-    <section id="controls" class="">
-      <button class="f3 btn pam" onclick="toggle_music()" id="pause">Pause</button>
-    </section>
-
-    <section id="btns" class="pvm">
+    <section id="btns" class="pvm phn man dt fill">
     <% (0...4).each do |row| %>
-      <div class="clearfix w8">
+      <div class="dtr fill">
         <% (0...4).each do |col| %>
-          <div class="di pvs"><button class="w4 h4 btn mbs beat" data-row="<%= row %>" data-column="<%= col %>" onclick="toggle_beat(this)">&nbsp;</button></div>
+          <button class="border-box dtc mw-fill w4 h4 btn mas beat" data-row="<%= row %>" data-column="<%= col %>" onclick="toggle_beat(this)">&nbsp;</button>
         <% end %>
       </div>
     <% end %>
