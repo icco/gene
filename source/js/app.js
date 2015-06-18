@@ -155,6 +155,15 @@ BufferLoader.prototype.loadBuffer = function(url, index) {
   request.send();
 }
 
+function next() {
+  var els = document.querySelectorAll(".beat");
+  console.log(els);
+}
+
+function prev() {
+
+}
+
 BufferLoader.prototype.load = function() {
   for (var i = 0; i < this.urlList.length; ++i)
   this.loadBuffer(this.urlList[i], i);
